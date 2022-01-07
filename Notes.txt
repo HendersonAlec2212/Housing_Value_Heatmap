@@ -10,7 +10,9 @@ display house pricing via heatmap/cloropleth | method of showing house pricing i
 >Layer needs: base map, marker made by user data, heat map that will consist of all price-markers made into heatmap, more as needed?
 
 
-
+see chapter 6 hmk for API call
+chapter 12 for scrape / mongoDB / JS communication
+chapter 12 for NoSQL activities to assist with python -> mongoDB communication
 
 
 
