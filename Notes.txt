@@ -1,0 +1,16 @@
+Concept: 
+
+Make a JS application to take user data for API call or database pull to retireve lat/lng from address autocomplete
+
+use lat/lng as center point for leaflet map
+
+display house pricing via heatmap/cloropleth | method of showing house pricing intensity in one layer
+
+> other aspects that affect the C.O.L in additional layer? maybe cluster marker layer?
+>Layer needs: base map, marker made by user data, heat map that will consist of all price-markers made into heatmap, more as needed?
+
+
+
+
+
+
