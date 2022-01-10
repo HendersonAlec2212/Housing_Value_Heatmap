@@ -2,12 +2,18 @@ Concept:
 
 Make a JS application to take user data for API call or database pull to retireve lat/lng from address autocomplete
 
+for this project, we should keep a JSON databse to prevent the need of having a live database since the time for production is essentially a week.
+
 use lat/lng as center point for leaflet map
 
 display house pricing via heatmap/cloropleth | method of showing house pricing intensity in one layer
 
 > other aspects that affect the C.O.L in additional layer? maybe cluster marker layer?
 >Layer needs: base map, marker made by user data, heat map that will consist of all price-markers made into heatmap, more as needed?
+
+ADDITONAL JS LIBRARY
+jQuery - make API call using this library instead of D3
+> use chart.js library to display information about how the property values have changed over time.
 
 
 see chapter 6 hmk for API call
