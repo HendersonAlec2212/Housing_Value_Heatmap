@@ -1,0 +1,14 @@
+scrape one entry
+set up mongoDB and collection
+each document should be one entry?
+
+follow below and generate or scrape 1024 entries.
+
+document = {
+id:
+property code:
+address:
+other:
+more:
+etc:
+}
