@@ -129,7 +129,7 @@ function d3_marker_map(url) {
             }// end if statement that pushes markers to list(s) if data is true
             
         }//end for loop
-        console.log(`heat_markers_list`);
+        console.log(`data passed to make heat map`);
         console.log(heat_markers_list);
         console.log(`markers_list`);
         console.log(markers_list);

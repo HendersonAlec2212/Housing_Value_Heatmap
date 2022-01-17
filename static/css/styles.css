@@ -8,22 +8,16 @@ body {
     width: 100%;
 }
 
-nav {
-    display: flex;
-}
-
-.navbar {
-    margin-bottom: 0 !important;
-}
-
-.container-fluid {
-    margin-top: 5px !important;
-}
-
-/* button {
- padding: 1% 0% 1% 0%;   
-} */
-
 .black-bg {
     background-color: black;
+}
+
+.pad_to_center {
+ padding: 1% 0% 1% 40%;   
+}
+
+#form_div {
+    display: block;
+    text-align: center;
+    
 }
