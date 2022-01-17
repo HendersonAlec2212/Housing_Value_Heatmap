@@ -1,8 +1,11 @@
 from argparse import MetavarTypeHelpFormatter
 from audioop import add
 import json
+from pydoc import doc
+from xmlrpc.server import DocXMLRPCRequestHandler
+from bson import ObjectId
 from unittest import result
-from flask import Flask, render_template, redirect, jsonify
+from flask import Flask, render_template, redirect, jsonify, Response
 from flask_pymongo import PyMongo
 
 #################################################
@@ -13,7 +16,7 @@ app = Flask(__name__)
 
 # set up mongo connection
 
-app.config["MONGO_URI"] = "mongodb://localhost:27017/addresses_midland"
+app.config["MONGO_URI"] = "mongodb://localhost:27017/address_midland"
 mongo = PyMongo(app)
 
 #################################################
@@ -34,14 +37,37 @@ def index():
 
 @ app.route("/<userInput>")
 def load_database(userInput):
-    # app.config["MONGO_URI"] = "mongodb://localhost:27017/address_midland"
-    # mongo = PyMongo(app)
-    # documents = mongo.db.houses.find_one(f'{userInput}')
-    # doc_list = []
-    # for doc in documents:
-    #     doc_list.append(doc)
-    # return jsonify(doc_list)
-    return f'{userInput}'
+    query_dictionary = {}
+    userInput = str(userInput)
+    documents = mongo.db.houses.find()
+    # using list comprehension
+    query_list = []
+    for doc in documents:
+        marker_dictionary = {}
+        marker_dictionary['lat'] = doc['lat']
+        marker_dictionary['lng']=doc['lng']
+        marker_dictionary['intensity']=doc['count']
+        query_list.append(marker_dictionary)
+    
+    # query_dictionary[userInput] = query_list
+    # print(f'the query_dictionary key is "{userInput}"')
+    return jsonify(query_list)
+
+    
+
+
+
+# @ app.route("/<userInput>")
+# def load_database(userInput):
+#     userInput = str(userInput)
+#     documents = mongo.db.houses.find()
+#     # using list comprehension
+#     listToStr = ' '.join([str(elem) for elem in documents])
+    
+#     print(listToStr) 
+#     return jsonify(listToStr)
+
+    
     
 
 

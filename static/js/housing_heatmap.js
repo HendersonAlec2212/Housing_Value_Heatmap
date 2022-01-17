@@ -132,11 +132,9 @@ for (var i = 0; i < data.length; i++) {
 
 
 console.log(marker_list);
-  
 
-  
-// Add all the cityMarkers to a new layer group.
-// Now, we can handle them as one group instead of referencing each one individually.
+// // Add all the cityMarkers to a new layer group.
+// // Now, we can handle them as one group instead of referencing each one individually.
 var cityLayer = L.layerGroup(marker_list);
 
 // Define variables for our tile layers.
