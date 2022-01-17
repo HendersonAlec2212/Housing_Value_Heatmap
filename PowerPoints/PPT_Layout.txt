@@ -1,0 +1,12 @@
+Title Slide
+Agenda Slide
+Executive Summary Slide
+Step 1: Scrape Code
+Step 2: Data Cleaning
+Step 3: Google API Call Code
+Step 4: Mongo DB/Flask
+Step 5: Leaflet Map Creation
+Map Interface (Image of Map)
+Findings: (Look for Insights in Map)
+Challenges & Suggestions
+Questions
