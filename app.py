@@ -1,11 +1,3 @@
-# from argparse import MetavarTypeHelpFormatter
-# from audioop import add
-# import json
-# from pydoc import doc
-# from xmlrpc.server import DocXMLRPCRequestHandler
-# from bson import ObjectId
-# from unittest import result
-from selectors import EpollSelector
 from flask import Flask, render_template, jsonify
 from flask_pymongo import PyMongo
 
@@ -29,6 +21,34 @@ def index():
     # homepage
     return render_template("index.html")
 
+
+@ app.route("/<userInput>")
+def load_database(userInput):
+    userInput = str(userInput)
+    
+    documents = mongo.db.test_properties.find()
+    # test_call for just one entry
+    # documents = mongo.db.properties.find({"address_2":userInput})
+
+    
+    # set up empty list to hold documents
+    query_list = []
+    for doc in documents:
+        # parse documents taking only what we need at the moment
+        marker_dictionary = {}
+        marker_dictionary['address_2']= doc['address_2']
+        marker_dictionary['owner']= doc['owner']
+        marker_dictionary['intensity']=doc['$_per_building_sqft']
+        marker_dictionary['lat'] = doc['lat']
+        marker_dictionary['lng']=doc['lng']
+
+        query_list.append(marker_dictionary)
+    
+    # the return to front-end needs to be a list of dictionaries
+    return jsonify(query_list)
+
+    
+    # example document in DB
 # {
 #     "_id": {
 #         "$oid": "61e60f8d68822cfcae1f4fb3"
@@ -51,34 +71,6 @@ def index():
 #     "lat": 32.0031271,
 #     "lng": -102.0656771
 # }
-
-@ app.route("/<userInput>")
-def load_database(userInput):
-    userInput = str(userInput)
-    documents = mongo.db.properties.find()
-    
-    
-    query_list = []
-    for doc in documents:
-        marker_dictionary = {}
-        marker_dictionary['lat'] = doc['lat']
-        marker_dictionary['lng']=doc['lng']
-        marker_dictionary['intensity']=doc['$_per_building_sqft']
-        marker_dictionary['address_2']= doc['address_2']
-
-    # for q_doc in document_query:
-    #     marker_dictionary['query_lat'] = q_doc['lat']
-    #     marker_dictionary['query_lng'] = q_doc['lng']
-
-
-        query_list.append(marker_dictionary)
-    
-    # the return to front-end needs to be a list of dictionaries
-
-    # or maybe (havent tested this) a dictionary with two lists. 
-    # # list 1) the solo marker matching the address query
-    # # list 2) all of the address lat/lng/$_per_sqFT to make the heatmap
-    return jsonify(query_list)
 
 
 if __name__ == "__main__":
