@@ -104,34 +104,41 @@ function d3_marker_map(url) {
         
             if (heat_marker_info) {
               // marker_list.push([marker_info.lat, marker_info.lng, marker_info.count]);
-              heat_markers_dict = {};
-              heat_markers_dict['lat'] = heat_marker_info.lat,
-              heat_markers_dict['lng'] = heat_marker_info.lng,
-              heat_markers_dict['intensity'] = heat_marker_info.intensity,
+                heat_markers_dict = {};
+                heat_markers_dict['lat'] = heat_marker_info.lat,
+                heat_markers_dict['lng'] = heat_marker_info.lng,
+                heat_markers_dict['intensity'] = heat_marker_info.intensity,
+                heat_markers_dict['max'] = 350
 
-              heat_markers_list.push(heat_markers_dict); // end push on heat_markers_list
-                  markers_list.push(
-                    L.marker([heat_marker_info.lat, heat_marker_info.lng])
-                    .bindPopup(`
-                    <body style="color: red;">
-                    <h3>address</h3>
-                    <hr>
-                    <h4>price/sqft</h4>
-                    <p>text</p>
-                    <h4>market value</h4>
-                    <p>text</p>
-                    <h4>info3</h4>
-                    <p>link to midland CAD</p>
-                    </body>
-                    `) // end bindPopup
-                    ); // end push on regular marker_list
+                heat_markers_list.push(heat_markers_dict); // end push on heat_markers_list
+
+                if (heat_marker_info.address_2 == userText){
+                    markers_list.push(
+                        L.marker([heat_marker_info.lat, heat_marker_info.lng])
+                        .bindPopup(`
+                        <body style="color: red;">
+                        <h3>address</h3>
+                        <hr>
+                        <h4>price/sqft</h4>
+                        <p>text</p>
+                        <h4>market value</h4>
+                        <p>text</p>
+                        <h4>info3</h4>
+                        <p>link to midland CAD</p>
+                        </body>
+                        `) // end bindPopup
+                        ); // end push on regular marker_list
+                    
+
+                }// end if statement that plots the user marker from query(address box)
+
         
-            }// end if statement that pushes markers to list(s) if data is true
+            }// end if statement that pushes heat markers to list(s) if data is true
             
         }//end for loop
         console.log(`data passed to make heat map`);
         console.log(heat_markers_list);
-        console.log(`markers_list`);
+        console.log(`data passed to make markers_list`);
         console.log(markers_list);
 
         myMap.remove();
@@ -160,19 +167,28 @@ function heatMap_and_regular_markers(markers_list,heat_markers_list) {
 
     var config = {
         // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-        // if scaleRadius is false it will be the constant radius used in pixels
-        "radius": 2,
-        "maxOpacity": .8,
+        "radius": 10,
+        "maxOpacity": .7,
+
         // scales the radius based on map zoom
-        "scaleRadius": true,
+        // if scaleRadius is false radius will be equal to above radius in pixels
+
+        "scaleRadius": false,
+
+
+
         // if set to false the heatmap uses the global maximum for colorization
         // if activated: uses the data maximum within the current map boundaries
         //   (there will always be a red spot with useLocalExtremas true)
         "useLocalExtrema": true,
+
+
         // which field name in your data represents the latitude - default "lat"
         latField: 'lat',
+
         // which field name in your data represents the longitude - default "lng"
         lngField: 'lng',
+
         // which field name in your data represents the data value - default "value"
         valueField: 'intensity'
     };
