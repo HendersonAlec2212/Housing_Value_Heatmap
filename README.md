@@ -48,7 +48,7 @@ The Front end captures and holds the user query, passes query to API using D3 wh
 ![JS Code Capture](PowerPoints/captures/alec_JS_screenshot.png)
 
 # Analysis
-Creating a Full Stack application that involved taking user input, passing to API, returning the correct information, then parseing ans assembling data for use through the Javascript was a mighty task. Everything fell together one day before the Project was set for review and after some initial tinkering, the application was able to send a request, parse the response and deliver a versitile map. 
+Creating a Full Stack application that involved taking user input, passing to API, returning the correct information, then parsing and assembling data for use through the Javascript was a mighty task. Everything fell together one day before the Project was set for review and after some initial tinkering, the application was able to send a request, parse the response and deliver a versitile map. 
 
 ![OverView Neighborhood](PowerPoints/captures/Alec_finished_map_02.png)
 
