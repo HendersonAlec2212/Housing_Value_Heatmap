@@ -10,7 +10,7 @@ The purpose of this project was to use HTML, CSS, and JavaScript to dynamically 
 
 ![Housing / Property Values](clean_data/clean_home_no_dupes.csv)
 
-link to scraped website -> https://iswdataclient.azurewebsites.net/webSearchAddress.aspx?dbkey=midlandcad
+![link to scraped website](https://iswdataclient.azurewebsites.net/webSearchAddress.aspx?dbkey=midlandcad)
 
 
 
