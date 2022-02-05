@@ -1,3 +1,6 @@
+LINK TO DEPLOYED APP - HEROKU : https://housing-value-heatmap.herokuapp.com/
+
+
 # project_03 - Housing Value Heatmap
 Alec | Andrew | Dan | Karina | Reinhard
 
