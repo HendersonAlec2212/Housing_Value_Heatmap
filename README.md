@@ -1,4 +1,5 @@
 LINK TO DEPLOYED APP - HEROKU : https://housing-value-heatmap.herokuapp.com/
+Copy < DELMAR ST 1208 > into the address bar in Heroku app! 
 
 
 # project_03 - Housing Value Heatmap
