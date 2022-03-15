@@ -59,7 +59,7 @@ Creating a Full Stack application that involved taking user input, passing to AP
 
 # Conclusion
 
-Having information visualization change on the whim of the user is a fantastic and powerful tool. Seeing data portrayed in different styles allows for potentially unseen trends to emerge. More impressive is that these visualizations can be built around dynamic datasets allowing for the applications to change based on the amount of information present, paving the way for utilitarian applications that are visually appealing, interesting and intuitive.
+Having information visualization change on the whim of the user is a fantastic and powerful tool. Seeing data portrayed in different styles allows for potentially unseen trends to emerge. More impressive is that these visualizations can be built around dynamic datasets allowing for the applications to change based on the amount of information present, paving the way for utilitarian applications that are visually appealing, interesting and intuitive
 
 Email: hendersonalec2212@gmail.com
 LinkedIn: https://www.linkedin.com/in/alec-henderson-8011b521a/
